@@ -19,6 +19,8 @@ line=$(echo "${arg}" | sed -r "s/${pattern}/\3/")
 # Check if phpstorm|pstorm command exist.
 if type phpstorm > /dev/null; then
     /usr/bin/env phpstorm --line "${line}" "${file}"
+    wmctrl -a PhpStorm
 elif type pstorm > /dev/null; then
     /usr/bin/env pstorm --line "${line}" "${file}"
+    wmctrl -a PhpStorm
 fi
